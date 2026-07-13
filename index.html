@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julien Werzowa — Projects</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+  <header class="site-header">
+    <h1>Projects</h1>
+    <p>Electrical engineering and software projects. Filter by tag to narrow things down.</p>
+  </header>
+
+  <div id="filter-bar" class="filter-bar"></div>
+  <div class="filter-meta">
+    <span id="result-count"></span>
+    <button id="clear-filters" class="clear-filters">Clear filters</button>
+  </div>
+
+  <div id="project-grid" class="project-grid"></div>
+  <p id="empty-state" class="empty-state" hidden>No projects match the selected tags.</p>
+
+  <footer class="site-footer">
+    <p>Built with plain HTML/CSS/JS, hosted on GitHub Pages.</p>
+  </footer>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
