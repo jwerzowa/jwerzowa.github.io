@@ -30,7 +30,7 @@ const PROJECTS = [
     tags: ["Electrical Engineering", "Embedded Systems"],
     skills: ["LabVIEW", "C Programming", "RF", "LoRa"],
     links: {
-      repo: "https://github.com/example/line-following-robot",
+      repo: "https://github.com/jwerzowa/LabVIEW_Groundstation",
       demo: null,
       writeup: null
     },
