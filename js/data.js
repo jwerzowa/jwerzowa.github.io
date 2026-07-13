@@ -94,7 +94,7 @@ const PROJECTS = [
       "Developed the public-facing website for HealthTunes, a non-profit organization partnering with clinical institutions (including UCLA Health, Wellstar, and Chelsea & Westminster NHS) to bring music-based therapy into patient care. Built with Astro and Tailwind CSS, deployed on Hetzner with source hosted on GitLab. Implemented GDPR-compliant cookie consent (CookieYes), dual analytics (Plausible and GA4), Mailchimp email capture, and device-aware call-to-action routing for iOS, Android, and desktop visitors. The site supports German as a required secondary language and follows a custom two-tone brand identity. Authored and structured supporting content including citations, FAQs, condition pages, and partner/artist listings.",
     category: "Web Development",
     tags: ["Web Development", "Front-End"],
-    skills: ["Astro", "Tailwind CSS", "JavaScript", "Third Party Integration"],
+    skills: ["Astro", "Tailwind CSS", "JavaScript", "Third Party Integration", "Claude Code"],
     links: {
       repo: null,
       demo: null,
