@@ -52,13 +52,13 @@ const PROJECTS = [
     tags: ["Electrical Engineering", "Embedded Systems", "Baremetal Programming"],
     skills: ["C Programming", "MCU Architecture", "Peripheral Interfacing", "SPI", "UART", "I2C"],
     links: {
-      repo: "https://github.com/example/line-following-robot",
+      repo: "https://github.com/jwerzowa/STM32F446RE_Custom_Drivers",
       demo: null,
       writeup: null
     },
     date: "2025-07",
     featured: false,
-    thumbnail: "images/baremetal-stm32-f446re-nucleo-drivers/thumb.jpg",
+    thumbnail: "images/baremetal-stm32-f446re-nucleo-drivers/thumb.jpeg",
     images: [
       // { src: "images/baremetal-stm32-f446re-nucleo-drivers/logic-analyzer.jpg", caption: "Logic analyzer capture of the SPI driver clocking out a register write." }
     ]

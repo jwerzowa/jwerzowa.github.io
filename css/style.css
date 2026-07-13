@@ -195,7 +195,7 @@ header.site-header p {
 .thumb-wrap {
   position: relative;
   aspect-ratio: 16 / 9;
-  background: var(--pill-bg);
+  background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -309,7 +309,7 @@ header.site-header p {
 .hero-thumb {
   position: relative;
   aspect-ratio: 2 / 1;
-  background: var(--pill-bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
