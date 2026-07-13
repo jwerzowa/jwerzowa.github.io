@@ -37,6 +37,22 @@
       <p class="description">${escapeHtml(project.description)}</p>
     </section>
 
+    ${project.images && project.images.length ? `
+    <section>
+      <h2>Gallery</h2>
+      <div class="gallery">
+        ${project.images.map((img) => `
+          <figure class="gallery-item">
+            <a href="${escapeHtml(img.src)}" target="_blank" rel="noopener noreferrer">
+              <img src="${escapeHtml(img.src)}" alt="${escapeHtml(img.caption || project.title)}" loading="lazy">
+            </a>
+            ${img.caption ? `<figcaption>${escapeHtml(img.caption)}</figcaption>` : ""}
+          </figure>
+        `).join("")}
+      </div>
+    </section>
+    ` : ""}
+
     <section>
       <h2>Skills Needed</h2>
       <ul class="skills-list">
