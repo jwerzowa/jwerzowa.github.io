@@ -1,4 +1,11 @@
 (function () {
+  const THUMB_FALLBACK_ICON = `
+    <svg class="thumb-fallback-icon" viewBox="0 0 64 64" aria-hidden="true">
+      <rect x="20" y="20" width="24" height="24" rx="2"></rect>
+      <path d="M26 20 V12 M32 20 V12 M38 20 V12 M26 44 V52 M32 44 V52 M38 44 V52 M20 26 H12 M20 32 H12 M20 38 H12 M44 26 H52 M44 32 H52 M44 38 H52"></path>
+    </svg>
+  `;
+
   const filterBar = document.getElementById("filter-bar");
   const grid = document.getElementById("project-grid");
   const emptyState = document.getElementById("empty-state");
@@ -45,10 +52,17 @@
       const card = document.createElement("article");
       card.className = "project-card";
       card.innerHTML = `
-        <h3><a href="project.html?id=${encodeURIComponent(project.id)}">${escapeHtml(project.title)}</a></h3>
-        <p>${escapeHtml(project.summary)}</p>
-        <div class="card-tags">
-          ${project.tags.map((t) => `<span>${escapeHtml(t)}</span>`).join("")}
+        <div class="thumb-wrap">
+          ${THUMB_FALLBACK_ICON}
+          ${project.thumbnail ? `<img class="thumb" src="${escapeHtml(project.thumbnail)}" alt="" loading="lazy" onerror="this.remove()">` : ""}
+        </div>
+        <div class="card-body">
+          ${project.category ? `<div class="eyebrow">${escapeHtml(project.category)}</div>` : ""}
+          <h3><a href="project.html?id=${encodeURIComponent(project.id)}">${escapeHtml(project.title)}</a></h3>
+          <p>${escapeHtml(project.summary)}</p>
+          <div class="card-tags">
+            ${project.tags.map((t) => `<span>${escapeHtml(t)}</span>`).join("")}
+          </div>
         </div>
       `;
       grid.appendChild(card);

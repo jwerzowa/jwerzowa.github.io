@@ -11,6 +11,7 @@
   --pill-active-bg: #3457d5;
   --pill-active-text: #ffffff;
   --shadow: 0 1px 2px rgba(20, 20, 30, 0.06), 0 4px 12px rgba(20, 20, 30, 0.04);
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -170,16 +171,70 @@ header.site-header p {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 20px;
+  overflow: hidden;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  gap: 10px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .project-card:hover {
   transform: translateY(-2px);
+}
+
+.card-body {
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+/* Thumbnails: real image on top, circuit-glyph fallback shows through
+   automatically since the <img> removes itself on load failure. */
+.thumb-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--pill-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb-wrap .thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thumb-fallback-icon {
+  width: 34%;
+  max-width: 64px;
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.thumb-fallback-icon rect {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.thumb-fallback-icon path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .project-card h3 {
@@ -230,12 +285,18 @@ header.site-header p {
   font-size: 0.9rem;
 }
 
+.project-detail .eyebrow {
+  margin-bottom: 8px;
+}
+
 .project-detail h1 {
   margin: 0 0 8px;
   font-size: 1.8rem;
 }
 
 .project-detail .meta-date {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
   color: var(--text-muted);
   font-size: 0.85rem;
   margin-bottom: 16px;
@@ -243,6 +304,33 @@ header.site-header p {
 
 .project-detail .card-tags {
   margin-bottom: 24px;
+}
+
+.hero-thumb {
+  position: relative;
+  aspect-ratio: 2 / 1;
+  background: var(--pill-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.hero-thumb .thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-thumb .thumb-fallback-icon {
+  width: 18%;
+  max-width: 72px;
 }
 
 .project-detail section {
